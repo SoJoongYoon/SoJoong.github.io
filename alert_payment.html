@@ -9,6 +9,27 @@
           gtag('js', new Date());
 
           gtag('config', 'UA-107044241-1');
+
+          ga('require','ecommerce','ecommerce.js');
+
+          ga('ecommerce:addTransaction', {
+            'id': '7777', //주문번호
+            'affiliation': 'kr.datalicious.com',//제휴사이름.
+            'revenue': '31,312',//구매금액
+            'shipping': '2500',//배송비
+            'tax': '3131'//세금
+          });
+
+          ga('ecommerce:addItem',{
+            'id': '7777',//주문번호
+            'name': 'Moon T-shirts',//제품명
+            'sku': '01',//제품고유번호
+            'category': '남여공용',//제품분류
+            'price': '28612',//제품단가
+            'quantity': '1'//제품수량
+          });
+
+          ga('ecommerce:send');
         </script>
         <link type="text/css" rel="stylesheet" href="./css/demo.css">
     <meta charset="utf-8">
